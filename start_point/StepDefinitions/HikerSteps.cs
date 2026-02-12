@@ -2,6 +2,7 @@ using System;
 using Reqnroll;
 using NUnit.Framework;
 
+namespace StepDefinitions;
 [Binding]
 public class HikerSteps
 {
