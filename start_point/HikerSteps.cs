@@ -22,6 +22,6 @@ public class HikerSteps
     [Then(@"the answer is (.*)")]
     public void ThenTheAnswerIs(int expected)
     {
-        Assert.AreEqual(expected, answer);
+        Assert.That(answer, Is.EqualTo(expected));
     }
 }

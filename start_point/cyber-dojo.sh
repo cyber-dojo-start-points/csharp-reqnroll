@@ -13,6 +13,7 @@ function cyber_dojo_exit()
   cyber_dojo_delete_dirs /sandbox/bin 
   cyber_dojo_delete_dirs /sandbox/obj
   #cyber_dojo_delete_files ...
+  find . -iname '*.feature.cs' -exec rm '{}' \;
 }
 cyber_dojo_enter
 trap cyber_dojo_exit EXIT SIGTERM
