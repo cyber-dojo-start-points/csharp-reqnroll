@@ -1,5 +1,5 @@
 {
-  "image_name": "ghcr.io/cyber-dojo-languages/csharp_reqnroll:f650f5e",
+  "image_name": "ghcr.io/cyber-dojo-languages/csharp_reqnroll:9141151",
   "display_name": "C# 9.0.311, Reqnroll 3.3.3 (a.k.a. SpecFlow)",
   "visible_filenames": [
     "Hiker.cs",
@@ -11,6 +11,6 @@
     ".cs",
     ".feature"
   ],
-  "max_seconds": 10,
+  "max_seconds": 15,
   "tab_size": 4
 }
