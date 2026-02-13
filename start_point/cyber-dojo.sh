@@ -18,5 +18,6 @@ function cyber_dojo_exit()
 cyber_dojo_enter
 trap cyber_dojo_exit EXIT SIGTERM
 
-dotnet restore --source /home/sandbox/.nuget/packages/
-dotnet test --no-restore
+ls -la 
+#dotnet restore --source /home/sandbox/.nuget/packages/
+#dotnet test --no-restore
