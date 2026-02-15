@@ -7,6 +7,7 @@ function cyber_dojo_enter()
   : # 1. Only return _newly_ generated reports.
   #cyber_dojo_reset_dirs ${...}
 }
+
 function cyber_dojo_exit()
 {
   : # 2. Remove text files we don't want returned.
@@ -18,13 +19,6 @@ function cyber_dojo_exit()
 cyber_dojo_enter
 trap cyber_dojo_exit EXIT SIGTERM
 
-ulimit -c # Prints 0
-ls -la 
-dotnet restore --source /home/sandbox/.nuget/packages/ --verbosity=diagnostic
-#dotnet test --no-restore
-
-# On MacBook I get...
-# "./cyber-dojo.sh: line 22:    14 File size limit exceeded(core dumped) dotnet restore --source /home/sandbox/.nuget/packages/\n",
-# "./cyber-dojo.sh: line 23:    16 File size limit exceeded(core dumped) dotnet test --no-restore\n"
-# This might be useful...
-# https://stackoverflow.com/questions/70469973/how-to-generate-coredump-file-in-alpine-container
+dotnet restore --source /home/sandbox/.nuget/packages/
+dotnet test --no-restore
+  

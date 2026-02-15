@@ -1,11 +1,12 @@
 {
-  "image_name": "ghcr.io/cyber-dojo-languages/csharp_reqnroll:00ed57e",
+  "image_name": "ghcr.io/cyber-dojo-languages/csharp_reqnroll:80e7988",
   "display_name": "C# 9.0.311, Reqnroll 3.3.3 (a.k.a. SpecFlow)",
   "visible_filenames": [
     "Hiker.cs",
     "StepDefinitions/HikerSteps.cs",
     "Features/Hiker.feature",
-    "cyber-dojo.sh"
+    "cyber-dojo.sh",
+    "dojo.csproj"
   ],
   "filename_extension": [
     ".cs",
