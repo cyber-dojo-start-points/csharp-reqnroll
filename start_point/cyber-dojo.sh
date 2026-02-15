@@ -21,3 +21,10 @@ trap cyber_dojo_exit EXIT SIGTERM
 ls -la 
 dotnet restore --source /home/sandbox/.nuget/packages/
 dotnet test --no-restore
+ls -al
+
+# On CI workflow you get...
+# "./cyber-dojo.sh: line 22:    14 File size limit exceeded(core dumped) dotnet restore --source /home/sandbox/.nuget/packages/\n",
+# "./cyber-dojo.sh: line 23:    16 File size limit exceeded(core dumped) dotnet test --no-restore\n"
+
+
