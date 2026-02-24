@@ -20,5 +20,5 @@ cyber_dojo_enter
 trap cyber_dojo_exit EXIT SIGTERM
 
 dotnet restore --source /home/sandbox/.nuget/packages/
-dotnet test --no-restore
+DOTNET_ROLL_FORWARD=LatestMajor dotnet test --no-restore
   
