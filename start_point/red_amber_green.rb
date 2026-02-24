@@ -1,7 +1,6 @@
-
 lambda { |stdout,stderr,status|
   output = stdout + stderr
-  return :green if /^.*Test execution complete\n.*test succeeded/.match(output)
-  return :red   if /^.*Test execution complete\n.*test failed/.match(output)
+  return :green if /^Passed!/.match(output)
+  return :red   if /^Failed!/.match(output)
   return :amber
 }
