@@ -1,6 +1,6 @@
 {
   "image_name": "ghcr.io/cyber-dojo-languages/csharp_reqnroll:c6cd779",
-  "display_name": "C# 9.0.311, Reqnroll 3.3.3 (a.k.a. SpecFlow)",
+  "display_name": "C# 10.0.103, Reqnroll 3.3.3 (a.k.a. SpecFlow)",
   "visible_filenames": [
     "Hiker.cs",
     "StepDefinitions/HikerSteps.cs",
