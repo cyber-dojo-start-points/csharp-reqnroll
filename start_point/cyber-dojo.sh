@@ -13,12 +13,10 @@ function cyber_dojo_exit()
   : # 2. Remove text files we don't want returned.
   cyber_dojo_delete_dirs /sandbox/bin 
   cyber_dojo_delete_dirs /sandbox/obj
-  #cyber_dojo_delete_files ...
-  #find . -iname '*.feature.cs' -exec rm '{}' \;
+  cyber_dojo_delete_files /sandbox/Reqnroll/userid
 }
 cyber_dojo_enter
 trap cyber_dojo_exit EXIT SIGTERM
 
 dotnet restore --source /home/sandbox/.nuget/packages/
 DOTNET_ROLL_FORWARD=LatestMajor dotnet test --no-restore
-  
