@@ -6,8 +6,7 @@ on:
       - main
 
 jobs:
-
-  build-publish-test:
+  red_amber_green_test:
     runs-on: ubuntu-latest
     steps:
       - uses: cyber-dojo-start-points/pinned-checkout@main
