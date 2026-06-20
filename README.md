@@ -1,4 +1,4 @@
-[![Github CI](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
+[![GitHub CI](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
 
 ## display_name="C# 9.0, Reqnroll 3.3.3"
 ## image_name="[ghcr.io/cyber-dojo-languages/csharp_reqnroll](https://ghcr.io/cyber-dojo-languages/csharp_reqnroll)"
