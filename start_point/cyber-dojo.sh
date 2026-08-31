@@ -18,5 +18,7 @@ function cyber_dojo_exit()
 cyber_dojo_enter
 trap cyber_dojo_exit EXIT SIGTERM
 
-dotnet restore --source /home/sandbox/.nuget/packages/
-DOTNET_ROLL_FORWARD=LatestMajor dotnet test --no-restore
+# dotnet test restores before it builds, so naming the image's package folder as
+# the only restore source lets one dotnet process do the whole run. Restoring in
+# a process of its own costs a second startup of the CLI and MSBuild.
+DOTNET_ROLL_FORWARD=LatestMajor dotnet test -p:RestoreSources=/home/sandbox/.nuget/packages/
