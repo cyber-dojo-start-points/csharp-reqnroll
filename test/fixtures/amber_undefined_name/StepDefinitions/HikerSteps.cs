@@ -1,0 +1,27 @@
+using Reqnroll;
+using NUnit.Framework;
+
+namespace StepDefinitions;
+[Binding]
+public class HikerSteps
+{
+    private int answer;
+
+    [Given(@"life, the universe and everything")]
+    public void GivenLifeTheUniverseAndEverything()
+    {
+    }
+
+    [When(@"I ask for the meaning")]
+    public void WhenIAskForTheMeaning()
+    {
+        // Hiker has an Answer, not an Ansewr.
+        answer = Hiker.Ansewr();
+    }
+
+    [Then(@"the answer is (.*)")]
+    public void ThenTheAnswerIs(int expected)
+    {
+        Assert.That(answer, Is.EqualTo(expected));
+    }
+}

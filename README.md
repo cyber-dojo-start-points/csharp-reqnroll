@@ -1,6 +1,6 @@
 [![GitHub CI](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
 
-## display_name="C# 9.0, Reqnroll 3.3.3"
+## display_name="C# 14.0, Reqnroll 3.3 (a.k.a. SpecFlow)"
 ## image_name="[ghcr.io/cyber-dojo-languages/csharp_reqnroll](https://ghcr.io/cyber-dojo-languages/csharp_reqnroll)"
 
 ![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snapshot.png)

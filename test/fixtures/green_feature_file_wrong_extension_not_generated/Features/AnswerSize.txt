@@ -1,0 +1,17 @@
+Saved as .txt rather than .feature. cyber-dojo.sh generates C# from the
+files that find names for *.feature, so this one never becomes a test class
+and Reqnroll never sees the scenario. Calling it something other than
+Hiker.feature would not have been enough on its own: every .feature file is
+generated whatever it is called and at whatever depth it sits, as the nested
+and renamed cases show. The extension is what keeps this one out.
+
+The scenario below asks for seven digits, which is one the code would not
+satisfy, so a green says this really did not run rather than that it ran and
+passed.
+
+Feature: The size of the answer
+
+  Scenario: The answer is seven digits long
+    Given life, the universe and everything
+    When I count the digits of the answer
+    Then there are 7 of them

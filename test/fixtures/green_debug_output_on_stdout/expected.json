@@ -1,0 +1,9 @@
+{
+  "max_output_lines": 90,
+  "match_counts": {
+    "^answer was called$": 1,
+    "^and this print aimed at stderr$": 1,
+    "^  Overall result: Passed$": 1,
+    "^  Test Count: 1, Passed: 1, Failed: 0, Warnings: 0, Inconclusive: 0, Skipped: 0$": 1
+  }
+}

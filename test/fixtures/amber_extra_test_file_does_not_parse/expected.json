@@ -1,0 +1,8 @@
+{
+  "matches": [ "^\\./Features/AnswerSize\\.feature: Reqnroll\\.Generator\\.Interfaces\\.TestGenerationError$" ],
+  "match_counts": {
+    "^  Test Count: ": 0,
+    "^  Overall result: ": 0,
+    "error CS": 0
+  }
+}

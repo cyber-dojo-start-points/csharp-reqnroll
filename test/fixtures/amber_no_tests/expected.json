@@ -1,0 +1,8 @@
+{
+  "match_counts": {
+    "^  Overall result: Inconclusive$": 1,
+    "^  Overall result: Passed$": 0,
+    "^  Test Count: 0, Passed: 0, Failed: 0, Warnings: 0, Inconclusive: 0, Skipped: 0$": 1,
+    "^    Failed Tests": 0
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "matches": [ "^System\\.DivideByZeroException : Attempted to divide by zero\\.$" ],
+  "match_counts": {
+    "^[0-9]+\\) Error : dojo\\.Features\\.TheHikerFeature\\.TheMeaningOfLifeTheUniverseAndEverything$": 1,
+    "^[0-9]+\\) Failed : ": 0,
+    "^  Overall result: Failed$": 1,
+    "^  Test Count: 1, Passed: 0, Failed: 1, Warnings: 0, Inconclusive: 0, Skipped: 0$": 1,
+    "^    Failed Tests - Failures: 0, Errors: 1, Invalid: 0$": 1
+  }
+}

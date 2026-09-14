@@ -1,0 +1,11 @@
+{
+  "matches": [
+    "^-> undefined: No matching step definition found for the step",
+    "^-> skipped because of previous errors$"
+  ],
+  "match_counts": {
+    "^  Overall result: Inconclusive$": 1,
+    "^  Test Count: 1, Passed: 0, Failed: 0, Warnings: 0, Inconclusive: 1, Skipped: 0$": 1,
+    "^    Failed Tests": 0
+  }
+}

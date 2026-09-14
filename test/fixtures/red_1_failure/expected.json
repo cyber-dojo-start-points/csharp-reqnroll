@@ -1,0 +1,10 @@
+{
+  "matches": [ "^  But was:  54$" ],
+  "match_counts": {
+    "^[0-9]+\\) Failed : dojo\\.Features\\.TheHikerFeature\\.TheMeaningOfLifeTheUniverseAndEverything$": 1,
+    "^[0-9]+\\) Error : ": 0,
+    "^  Overall result: Failed$": 1,
+    "^  Test Count: 1, Passed: 0, Failed: 1, Warnings: 0, Inconclusive: 0, Skipped: 0$": 1,
+    "^    Failed Tests - Failures: 1, Errors: 0, Invalid: 0$": 1
+  }
+}
