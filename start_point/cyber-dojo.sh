@@ -28,7 +28,10 @@ trap cyber_dojo_exit EXIT SIGTERM
 export DOTNET_ROLL_FORWARD=LatestMajor
 
 CSC=$(find /usr/share/dotnet/sdk -name csc.dll | head -1)
-CORE=$(ls -d /usr/share/dotnet/shared/Microsoft.NETCore.App/* | tail -1)
+# The reference assemblies of .NET itself: the same ones an ordinary build
+# compiles against. They describe every .NET type without holding its code, so
+# they are quicker for the compiler to read than the assemblies .NET runs on.
+REF_PACK=$(ls -d /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/*/ref/net*/ | tail -1)
 GENERATOR=~/reqnroll_generator/feature_code_generator.dll
 NUNIT_PLUGIN=$(find ~/.nuget/packages/reqnroll.nunit -name 'Reqnroll.NUnit.Generator.ReqnrollPlugin.dll' | sort | tail -1)
 
@@ -36,25 +39,27 @@ NUNIT_PLUGIN=$(find ~/.nuget/packages/reqnroll.nunit -name 'Reqnroll.NUnit.Gener
 # image was built, which is why there is nothing to download when you run.
 REFERENCES=''
 for dll in ~/dojo_refs/*.dll; do REFERENCES="${REFERENCES} -r:${dll}"; done
-for dll in ${CORE}/System.*.dll ${CORE}/netstandard.dll; do REFERENCES="${REFERENCES} -r:${dll}"; done
+for dll in ${REF_PACK}*.dll; do REFERENCES="${REFERENCES} -r:${dll}"; done
 
 # 1. Every .feature file becomes C#, at any depth, so a feature in a
-# sub-directory is turned into tests like any other. Gherkin that cannot be
-# parsed stops the run here and says which file it was in.
+# sub-directory is turned into tests like any other. All of them are turned in
+# one go, so the generator starts once however many there are. Gherkin that
+# cannot be parsed stops the run here and says which files it was in.
 mkdir -p generated
-for feature in $(find . -name '*.feature'); do
-  generated="generated/$(echo "${feature#./}" | tr '/' '_').cs"
-  if ! dotnet ${GENERATOR} "${feature}" "${generated}" "${PWD}" dojo "${NUNIT_PLUGIN}"; then
-    exit 1
-  fi
-done
+if ! dotnet ${GENERATOR} "${PWD}" dojo "${NUNIT_PLUGIN}" generated $(find . -name '*.feature'); then
+  exit 1
+fi
 
 # 2. Every .cs file is compiled, at any depth, including the ones just
 # generated and any that nothing else refers to yet, so a file you are midway
 # through writing shows its errors instead of being passed over in silence.
+#
+# -nowarn:1701,1702 keeps one warning out of your way. NUnit was built against
+# an older .NET than this one. The mismatch is harmless, and there is nothing
+# you could do about it from here.
 mkdir -p bin
 cp ~/dojo_refs/*.dll bin/
-if ! dotnet ${CSC} -nologo -target:library -out:bin/dojo.dll ${REFERENCES} $(find . -name '*.cs'); then
+if ! dotnet ${CSC} -nologo -nowarn:1701,1702 -target:library -out:bin/dojo.dll ${REFERENCES} $(find . -name '*.cs'); then
   exit 1
 fi
 

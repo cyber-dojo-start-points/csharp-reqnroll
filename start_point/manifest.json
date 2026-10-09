@@ -1,5 +1,5 @@
 {
-  "image_name": "ghcr.io/cyber-dojo-languages/csharp_reqnroll:8c3f5b0",
+  "image_name": "ghcr.io/cyber-dojo-languages/csharp_reqnroll:166390e",
   "display_name": "C# 14.0, Reqnroll 3.3 (a.k.a. SpecFlow)",
   "language": [
     "C#",
